@@ -4,7 +4,6 @@ import css from 'unocss/vite';
 import { join as pathJoin } from 'path';
 import autoImport from 'unplugin-auto-import/vite';
 import Inspect from 'vite-plugin-inspect';
-import Pages from 'vite-plugin-pages';
 
 export default {
   resolve: {
@@ -31,6 +30,5 @@ export default {
       ],
     }),
     Inspect(),
-    Pages(),
   ],
 } as UserConfig;
