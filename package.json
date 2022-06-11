@@ -12,7 +12,7 @@
     "build-storybook": "build-storybook",
     "prerender": "node server/prerender.mjs"
   },
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.18.2",
     "@mdx-js/react": "^2.1.1",
     "@storybook/addon-actions": "^6.5.6",
@@ -38,12 +38,8 @@
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
-    "@unocss/reset": "^0.32.12",
-    "@vitejs/plugin-react": "^1.3.0",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
-    "compression": "^1.7.4",
-    "cross-env": "^7.0.3",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
@@ -51,26 +47,23 @@
     "eslint-plugin-only-warn": "^1.0.3",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
-    "express": "^4.18.1",
-    "immer": "^9.0.14",
-    "mobx": "^6.5.0",
-    "mobx-devtools-mst": "^0.9.30",
-    "mobx-react-lite": "^3.4.0",
-    "mobx-state-tree": "^5.1.5",
     "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^1.3.0",
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-head": "^3.4.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-use": "^17.4.0",
-    "serve-static": "^1.15.0",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^4.6.3",
     "unocss": "^0.32.12",
     "unplugin-auto-import": "^0.7.1",
     "vite": "^2.9.7",
-    "vite-plugin-inspect": "^0.5.0",
-    "vite-plugin-pages": "^0.23.0"
+    "vite-plugin-inspect": "^0.5.0"
   }
 }
