@@ -3,10 +3,10 @@ import renderTemplate from './renderTemplate.mjs';
 import { toAbsolute } from './root.mjs';
 import print from './print.mjs';
 
-const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8').replace(/>\s+</g, '><');
+const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8').replace(/>\s+</g, '><');
 
 const bootstrap = async () => {
-  const { render, names } = await import('../dist/server/entry-server.js');
+  const { render, names } = await import('../dist-ssr/entry-server.js');
   const staticNames = names.filter((name) => !name.includes('['));
 
   // eslint-disable-next-line no-restricted-syntax
@@ -18,7 +18,7 @@ const bootstrap = async () => {
 
     const html = renderTemplate(template, appHtml, headTags);
 
-    const filePath = `dist/static${url === '/' ? '/index' : url}.html`;
+    const filePath = `dist${url === '/' ? '/index' : url}.html`;
     fs.writeFileSync(toAbsolute(filePath), html);
     print('pre-rendered:', filePath);
   }
