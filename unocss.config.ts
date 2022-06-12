@@ -41,6 +41,14 @@ export default defineConfig({
         parent: `@media (max-width: ${mediaPx}px)`,
       };
     },
+    (matcher) => {
+      if (!matcher.startsWith('hocus:')) return matcher;
+
+      return {
+        matcher: matcher.slice(6),
+        selector: (s) => `${s}:hover, ${s}:focus`,
+      };
+    },
   ],
   presets: [
     presetUno(),
