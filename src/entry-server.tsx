@@ -2,10 +2,12 @@ import ReactDomServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { HeadProvider as _HeadProvider } from 'react-head';
 import { FC } from 'react';
+import { enableStaticRendering } from 'mobx-react-lite';
 import App from './App';
 import { getRoutes } from '~/routes';
 
 const { routes, names } = getRoutes();
+enableStaticRendering(true);
 
 const HeadProvider = _HeadProvider as FC<{ headTags: any[], children: any }>;
 
