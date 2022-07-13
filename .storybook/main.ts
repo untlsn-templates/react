@@ -2,6 +2,7 @@ import css from 'unocss/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import { mergeConfig } from 'vite';
 import prevSettings from '../vite.config';
+import react from '@vitejs/plugin-react';
 
 module.exports = {
   "stories": [
@@ -26,10 +27,18 @@ module.exports = {
       plugins: [
         css(),
         autoImport({
-          dts: false,
+          dts: 'src/auto-imports.d.ts',
           imports: [
             'react',
             'react-router-dom',
+            {
+              mobx: ['makeAutoObservable'],
+              'mobx-react-lite': [
+                'useLocalObservable',
+                ['observer', 'mobxObserver'],
+              ],
+              '/src/hooks/O': [['default', 'O']],
+            },
           ],
         }),
       ]

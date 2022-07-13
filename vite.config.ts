@@ -6,9 +6,14 @@ import autoImport from 'unplugin-auto-import/vite';
 import Inspect from 'vite-plugin-inspect';
 
 export default {
+  ssr: {
+    // noExternal: [''],
+  },
   resolve: {
     alias: {
       '~/': `${pathJoin(__dirname, './src')}/`,
+      $css: pathJoin(__dirname, './src/assets/style/index.ts'),
+      $public: pathJoin(__dirname, './'),
     },
   },
   plugins: [
@@ -23,9 +28,12 @@ export default {
           mobx: ['makeAutoObservable'],
           'mobx-react-lite': [
             'useLocalObservable',
-            ['observer', 'mobxObserver'],
+            'observer',
           ],
           '/src/hooks/O': [['default', 'O']],
+          'mobx-state-tree': [
+            ['types', 'typex'],
+          ],
         },
       ],
     }),
