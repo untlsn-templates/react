@@ -1,7 +1,7 @@
 import { Routes } from 'react-router-dom';
 import '$css';
 import { Link, Title } from 'react-head';
-import type { Route } from '~/routes';
+import type { Route } from '~/router';
 import favicon from '~/assets/images/favicon.svg';
 
 export default function App({ routes }: { routes: Route[] }) {

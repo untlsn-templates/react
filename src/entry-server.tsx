@@ -4,9 +4,9 @@ import { HeadProvider as _HeadProvider } from 'react-head';
 import { FC } from 'react';
 import { enableStaticRendering } from 'mobx-react-lite';
 import App from './App';
-import { getRoutes } from '~/routes';
+import { getRoutes } from '~/router';
 
-const { routes, names } = getRoutes();
+const { routes, names } = getRoutes(() => 'Loading...');
 enableStaticRendering(true);
 
 const HeadProvider = _HeadProvider as FC<{ headTags: any[], children: any }>;

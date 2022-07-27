@@ -5,11 +5,11 @@ import { HeadProvider as _HeadProvider } from 'react-head';
 import App from './App';
 import 'uno.css';
 import '~/assets/style/reset.css';
-import { getLazyRoutes } from '~/routes';
+import { getLazyRoutes } from '~/router';
 
 const HeadProvider = _HeadProvider as FC<{ children: any }>;
 
-const routes = getLazyRoutes();
+const routes = getLazyRoutes(() => 'Loading...');
 
 const container = document.getElementById('app')!;
 const entry = (
