@@ -25,7 +25,7 @@ export function getLazyRoutes(): Route[] {
 }
 
 export function getRoutes() {
-  const pages = import.meta.globEager('./pages/**');
+  const pages = import.meta.glob('./pages/**', { eager: true }) as Record<any, { default: any }>;
   const names = Object.keys(pages);
 
   return {

@@ -6,8 +6,8 @@ import autoImport from 'unplugin-auto-import/vite';
 import Inspect from 'vite-plugin-inspect';
 
 export default {
-  ssr: {
-    // noExternal: [''],
+  server: {
+    port: 3333,
   },
   resolve: {
     alias: {

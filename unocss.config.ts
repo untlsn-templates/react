@@ -7,21 +7,26 @@ import {
   presetWebFonts,
   presetIcons,
 } from 'unocss';
-// @ts-ignore
-import twConfig from './tailwind.config.cjs';
+import * as fs from 'fs';
+import * as path from 'path';
+import { theme } from './tailwind.config.cjs';
 
-export default defineConfig({
-  shortcuts: [
-    /* Example
-    ['name','uno-classes'],
-    */
-  ],
+const shortcuts: [string, string][] = [
+  /* Example: ['name','uno-classes'] */
+  ['flex-center', 'flex justify-center items-center'],
+  ['opas', 'hover:opacity-70 transition-opacity'],
+];
+
+const config = defineConfig({
+  shortcuts,
   // WebStorm don't support unocss config, so theme put in tailwind.config.cjs
-  theme: {
-    ...twConfig.theme.extend,
-  },
+  theme: theme.extend,
   rules: [
-    ['flex-center', { display: 'flex', 'align-items': 'center', 'justify-content': 'center' }],
+    [/^size-(\d+)$/, ([, d]) => {
+      const size = `${(Number(d)) / 4}rem`;
+
+      return { width: size, height: size };
+    }],
   ],
   variants: [
     (matcher) => {
@@ -63,7 +68,6 @@ export default defineConfig({
     presetIcons({
       extraProperties: {
         display: 'inline-block',
-        'vertical-align': 'top',
         height: 'auto',
         'min-height': '1em',
       },
@@ -74,3 +78,11 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
 });
+
+// Create mock file for auto-complete
+fs.writeFileSync(
+  path.join(__dirname, '/src/assets/style/mock.css'),
+  shortcuts.map(([name]) => `.${name} {}`).join('\n'),
+);
+
+export default config;

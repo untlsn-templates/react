@@ -1,6 +1,5 @@
 import { Routes } from 'react-router-dom';
-import 'uno.css';
-import '~/assets/style/reset.css';
+import '$css';
 import { Link, Title } from 'react-head';
 import type { Route } from '~/routes';
 import favicon from '~/assets/images/favicon.svg';
