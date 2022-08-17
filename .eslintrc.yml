@@ -15,6 +15,7 @@ plugins:
   - react
   - only-warn
 rules:
+  '@typescript-eslint/consistent-type-imports': 1
   import/no-unresolved: off
   import/extensions: off
   no-undef: off

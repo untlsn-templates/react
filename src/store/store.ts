@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree';
-import makeInspectable from 'mobx-devtools-mst';
+import devtools from 'mobx-devtools-mst';
 
 const Store = types
   .model({
@@ -12,6 +12,6 @@ const Store = types
   }));
 
 const store = Store.create();
-makeInspectable(store);
+devtools(store);
 
 export default store;

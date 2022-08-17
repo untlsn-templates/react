@@ -22,10 +22,18 @@ const config = defineConfig({
   // WebStorm don't support unocss config, so theme put in tailwind.config.cjs
   theme: theme.extend,
   rules: [
-    [/^size-(\d+)$/, ([, d]) => {
-      const size = `${(Number(d)) / 4}rem`;
+    [/^((min|max)-)?size-(\d+)(.+)?$/, ([matcher]) => {
+      const [type, sizePart] = matcher.split('size-');
+      const sizeNum = Number(sizePart);
+      let size = sizePart;
+      if (sizeNum > 0) size = `${sizeNum / 4}rem`;
+      else if (sizePart.includes('/')) {
+        const [prev, suf] = sizePart.split('/');
+        const percent = 100 * Number(prev) / Number(suf);
+        size = `${percent}%`;
+      }
 
-      return { width: size, height: size };
+      return { [`${type}width`]: size, [`${type}height`]: size };
     }],
   ],
   variants: [

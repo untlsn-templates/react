@@ -1,7 +1,6 @@
 import '$css'
 import { HashRouter } from 'react-router-dom';
-import { StrictMode } from 'react';
-import HeadProvider from '../src/providers/HeadProvider';
+import HeadProvider from '~/components/providers/HeadProvider';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,14 +14,12 @@ export const parameters = {
 
 export const decorators = [
   (Story: any) => (
-    <StrictMode>
-      <HeadProvider>
-        <HashRouter>
-          <div className="text-text dark:text-dark-text">
-            <Story />
-          </div>
-        </HashRouter>
-      </HeadProvider>
-    </StrictMode>
+    <HeadProvider>
+      <HashRouter>
+        <div className="text-text dark:text-dark-text">
+          <Story />
+        </div>
+      </HashRouter>
+    </HeadProvider>
   )
 ]

@@ -1,4 +1,4 @@
-import Button from '~/components/atoms/Button/index';
+import Button from '~/components/containers/Button';
 
 export default {
   title: 'Button',

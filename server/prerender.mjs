@@ -6,13 +6,13 @@ import print from './print.mjs';
 const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8').replace(/>\s+</g, '><');
 
 const bootstrap = async () => {
-  const { render, names } = await import('../dist-ssr/entry-server.js');
+  const { render, names } = await import('../dist-ssr/entry-server.mjs');
   const staticNames = names.filter((name) => !name.includes('['));
   const prerenderArr = [];
 
   // eslint-disable-next-line no-restricted-syntax
   for (const _url of staticNames) {
-    let url = `/${_url.replace(/(\.\/pages\/)|(index)|(\.[tj]sx)/g, '')}`;
+    let url = `/${_url.replace(/(\.\.\/pages\/)|(index)|(\.[tj]sx)/g, '')}`;
 
     const headTags = [];
     // eslint-disable-next-line no-await-in-loop

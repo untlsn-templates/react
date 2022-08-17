@@ -1,25 +1,19 @@
-import React, { FC } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { HeadProvider as _HeadProvider } from 'react-head';
 import App from './App';
-import 'uno.css';
-import '~/assets/style/reset.css';
+import '$css';
 import { getLazyRoutes } from '~/router';
-
-const HeadProvider = _HeadProvider as FC<{ children: any }>;
+import HeadProvider from '~/components/providers/HeadProvider';
 
 const routes = getLazyRoutes(() => 'Loading...');
 
 const container = document.getElementById('app')!;
 const entry = (
-  <React.StrictMode>
-    <HeadProvider>
-      <BrowserRouter>
-        <App routes={routes} />
-      </BrowserRouter>
-    </HeadProvider>
-  </React.StrictMode>
+  <HeadProvider>
+    <BrowserRouter>
+      <App routes={routes} />
+    </BrowserRouter>
+  </HeadProvider>
 );
 
 // Client-side rendering in development, SSG in production
