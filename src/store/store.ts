@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree';
-import devtools from 'mobx-devtools-mst';
+import devtools from '~/helpers/mstdev';
 
 const Store = types
   .model({
