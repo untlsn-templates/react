@@ -1,10 +1,10 @@
 import { Routes } from 'react-router-dom';
 import '$css';
 import { Link, Title } from 'react-head';
-import type { Route as RouteType } from '~/routes';
 import favicon from '~/assets/images/favicon.svg';
+import type { Route as RouteType } from '~/routes';
 
-export default function App({ routes }: { routes: RouteType[] }) {
+export function Page({ routes }: { routes: RouteType[] }) {
   return (
     <>
       <Link rel="icon" type="image/svg+xml" href={favicon} />

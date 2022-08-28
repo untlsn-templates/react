@@ -1,6 +1,6 @@
 # Features
 
-- Vite-SSG + pnpm for speed
+- Vite SSR + pnpm for speed
 - Typescript of course
 - Eslint for code quality
 - UnoCSS for styling
