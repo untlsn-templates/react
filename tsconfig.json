@@ -20,7 +20,8 @@
     "paths": {
       "~/*": ["./src/*"],
       "$css": ["./src/assets/style/index.ts"],
-      "$public": ["./public"]
+      "$public": ["./public"],
+      "x": ["./src/helpers/x/index.ts"]
     }
   },
   "include": ["src"],

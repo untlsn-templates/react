@@ -16,6 +16,7 @@ export default {
       '~/': `${fromRoot('./src')}/`,
       $css: fromRoot('./src/assets/style/index.ts'),
       $public: fromRoot('./'),
+      x: fromRoot('./src/helpers/x/index.ts'),
     },
   },
   plugins: [
