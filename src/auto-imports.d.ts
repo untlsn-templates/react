@@ -46,4 +46,5 @@ declare global {
   const useTransition: typeof import('react')['useTransition']
   const useValtio: typeof import('valtio')['useSnapshot']
   const valtio: typeof import('valtio')['proxy']
+  const valtioInspect: typeof import('~/helpers/valtioInspect')['default']
 }

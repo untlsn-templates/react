@@ -27,6 +27,7 @@ export default {
         'react',
         'react-router-dom',
         {
+          '~/helpers/valtioInspect': [['default', 'valtioInspect']],
           valtio: [['proxy', 'valtio'], ['useSnapshot', 'useValtio']],
           '@tanstack/react-query': ['useQuery', 'useQueryClient', 'useInfiniteQuery'],
           clsx: ['clsx'],
