@@ -1,6 +1,15 @@
 import logo from '~/assets/images/logo.svg';
 import '~/App.css';
-import store from '~/store/store';
+import countStore, { countActions } from '~/store/count';
+import button from '~/components/containers/Button';
+
+function CountText() {
+  const countSnap = useValtio(countStore);
+
+  return (
+    <span>{countSnap.count}</span>
+  );
+}
 
 export default function App() {
   return (
@@ -12,9 +21,10 @@ export default function App() {
           <button
             type="button"
             className="App-button"
-            onClick={store.increment}
+            onClick={countActions.increment}
           >
-            count is: <O>{() => store.count}</O>
+            <span>count is: </span>
+            <CountText />
           </button>
         </p>
         <p>
