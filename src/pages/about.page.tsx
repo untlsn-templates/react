@@ -1,17 +1,19 @@
-import { Title } from 'react-head';
 import logo from '~/assets/images/logo.svg';
+import useDocumentTitle from '~/hooks/useDocumentTitle';
+import '~/App.css';
 
-export default function About() {
+export function Page() {
+  useDocumentTitle('App about');
+
   return (
     <div className="text-center">
-      <Title>App about</Title>
       <header className="App-header">
         <img src={logo} className="App-image" alt="logo" />
         <p>About</p>
         <p>
-          <Link to="/" className="text-react-blue text-lg">
+          <a href="/" className="text-react-blue text-lg">
             Back to home
-          </Link>
+          </a>
         </p>
       </header>
     </div>

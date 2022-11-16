@@ -1,3 +1,3 @@
 import './root.css';
 import './reset.css';
-import 'uno.css';
+import 'virtual:uno.css';

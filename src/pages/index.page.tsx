@@ -11,7 +11,7 @@ function CountText() {
   );
 }
 
-export default function App() {
+export function Page() {
   return (
     <div className="text-center">
       <header className="App-header">
@@ -47,9 +47,9 @@ export default function App() {
             Vite Docs
           </a>
           <span> | </span>
-          <Link to="/about">
+          <a href="/about">
             About
-          </Link>
+          </a>
         </p>
       </header>
     </div>

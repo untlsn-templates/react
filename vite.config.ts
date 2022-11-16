@@ -4,6 +4,7 @@ import css from 'unocss/vite';
 import { join as pathJoin } from 'path';
 import autoImport from 'unplugin-auto-import/vite';
 import Inspect from 'vite-plugin-inspect';
+import ssr from 'vite-plugin-ssr/plugin';
 
 const fromRoot = (path: string) => pathJoin(__dirname, path);
 
@@ -20,13 +21,13 @@ export default {
     },
   },
   plugins: [
+    ssr(),
     react(),
     css(),
     autoImport({
       dts: 'src/auto-imports.d.ts',
       imports: [
         'react',
-        'react-router-dom',
         {
           '~/helpers/valtioInspect': [['default', 'valtioInspect']],
           valtio: [['proxy', 'valtio'], ['useSnapshot', 'useValtio']],

@@ -1,4 +1,6 @@
-function Index() {
+import { useParams } from '~/renderer/PageContext';
+
+export function Page() {
   const { id } = useParams();
 
   return (
@@ -7,5 +9,3 @@ function Index() {
     </div>
   );
 }
-
-export default Index;
