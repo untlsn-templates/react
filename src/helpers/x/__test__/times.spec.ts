@@ -13,6 +13,9 @@ describe('times', () => {
     it('should return value with correct length', () => {
       expect(arr).toHaveLength(length);
     });
+    it('should return empty array when length is negative', () => {
+      expect(x.timesConst(-6, uniqSymbol)).toHaveLength(0);
+    });
   });
 
   describe('timesMap', () => {

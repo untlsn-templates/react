@@ -6,9 +6,15 @@ import { identity } from '~/helpers/x/flow';
  * const arr = times(5, true);
  * arr -> [true, true, true, true, true]
  */
-export const timesConst = <T>(length: number, value: T) => (
-  Array(length).fill(value)
-);
+export const timesConst = <T>(length: number, value: T) => {
+  if (length < 0) {
+    // eslint-disable-next-line no-console
+    console.error('Length of times can\'t be negative. Empty array was returned');
+    return [];
+  }
+
+  return Array(length).fill(value);
+};
 
 /**
  * Create array mapped by callback
