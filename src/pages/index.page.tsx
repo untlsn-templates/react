@@ -11,6 +11,14 @@ function CountText() {
   );
 }
 
+function CountHref() {
+  const countSnap = useValtio(countStore);
+
+  return (
+    <a className="text-react-blue" href={`/id/${countSnap.count}`}>ID from count</a>
+  );
+}
+
 export function Page() {
   return (
     <div className="text-center">
@@ -26,6 +34,9 @@ export function Page() {
             <span>count is: </span>
             <CountText />
           </button>
+        </p>
+        <p>
+          <CountHref />
         </p>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
